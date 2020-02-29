@@ -13,7 +13,7 @@ const getContent = async (url)=>{
     const body = await res.json();
     return body};
 }
-getContent('http://46.101.146.101:8081/categories/').then(body=> {
+getContent('https://46.101.146.101:8081/categories/').then(body=> {
     body.forEach((el) => {
          blockHTML(el.id, el.title,el.category_image_url);
      });
@@ -74,7 +74,7 @@ return arrayRandomNumbers;
 
 //формирование ссылки и получение промиса
 const getGifs = async (gif_title,gif_amount,api_key)=>{
-    const url = `http://api.giphy.com/v1/gifs/search?q=${gif_title}&api_key=${api_key}&limit=${gif_amount}`;
+    const url = `https://api.giphy.com/v1/gifs/search?q=${gif_title}&api_key=${api_key}&limit=${gif_amount}`;
     const res = await fetch(url);
     const body = await res.json();
     return body;
